@@ -1,0 +1,15 @@
+#!/bin/bash
+echo -n " please enter username to be checked: "
+read username
+echo "search acvtivated !!.. searching.. "
+if grep $username /etc/passwd; then 
+echo " the user account for this username exist in the system "
+echo " the user account is part of team5 "
+elif ls -d /home/$username/; then 
+echo " The directory for $username exist in the system "
+echo " Even though the username does not exist in the system "
+else
+echo " The user directory does not exist for this $username "
+echo " The user account for the $username does not exist "
+fi
+
